@@ -1,0 +1,9 @@
+.line-count-container {
+  width: 40px;
+}
+
+.main-text-container {
+  width: calc(100% - 40px);
+  outline: none;
+}
+/*# sourceMappingURL=InputBox.css.map */
