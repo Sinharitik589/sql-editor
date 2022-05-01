@@ -2,6 +2,7 @@ import React from 'react'
 import { Row ,Col } from 'react-bootstrap'
 import Button from '../Button/Button'
 import InputBox from "../InputBox/InputBox"
+import SectionTitle from '../SectionTitle/SectionTitle'
 import "./Query.css"
 
 export default function Query() {
@@ -23,7 +24,7 @@ export default function Query() {
             </Col>
             <Col md={2}>
                 <div className="border-th-left h-100">
-
+                    <SectionTitle title="Columns"/>
                 </div>
             </Col>
         </Row>

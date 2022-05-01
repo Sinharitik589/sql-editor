@@ -8,9 +8,9 @@ import Result from '../Result/Result';
 export default function Field() {
     return (
         <div style={{height:"calc(100vh - 90px)"}}>
-            <Split gutterSize={2} sizes={[80,20]} cursor="col-resize" className="h-100 row gx-0">
+            <Split gutterSize={5} sizes={[80,20]} cursor="col-resize" className="h-100 row gx-0">
                 <div className="h-100">
-                    <Split gutterSize={2} cursor="col-resize" sizes={[45,55]} className="h-100" direction="vertical">
+                    <Split gutterSize={5} cursor="col-resize" sizes={[45,55]} className="h-100" direction="vertical">
                         <div className="w-100">
                             <Query/>
                         </div>

@@ -1,0 +1,12 @@
+.searchbox {
+  height: 30px;
+  border-radius: 10px;
+  border: 1.5px solid #133C8B;
+}
+
+.searchbox input {
+  outline: none;
+  border: none;
+  color: #353535;
+}
+/*# sourceMappingURL=SearchBox.css.map */
