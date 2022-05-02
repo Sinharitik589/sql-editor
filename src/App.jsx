@@ -2,11 +2,12 @@ import React from "react";
 import Main from "./pages/Main"
 import "./App.css"
 import Customers from "./utils/data/customers.json"
+import Orders from "./utils/data/orders.json"
 import { TableProvider } from "./context/TableContext";
 
 function App() {
   return (
-   <TableProvider initial={Customers} initialTitle="Customers">
+   <TableProvider initial={Orders} initialTitle="Orders">
       <div className="vh-100 vw-100">
         <Main/>
       </div>

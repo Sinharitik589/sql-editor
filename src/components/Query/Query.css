@@ -3,10 +3,14 @@
 }
 
 .inputbox-container {
-  height: calc(100% - 56px);
+  height: calc(100% - 66px);
 }
 
 .column-name-label {
   font-size: .8rem;
+}
+
+.query-tool-container {
+  height: 35px;
 }
 /*# sourceMappingURL=Query.css.map */

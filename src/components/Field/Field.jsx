@@ -14,7 +14,7 @@ export default function Field() {
 
     useEffect(() =>{
         setCurrentTable(table);
-    },[table]);
+    },[]);
 
     return (
         <div style={{height:"calc(100vh - 60px)"}}>
@@ -27,7 +27,7 @@ export default function Field() {
                         <div className="w-100">
                             <Info/>
                             <div style={{height:"calc(100% - 30px)"}}>
-                                <Query />
+                                <Query setCurrentTable={setCurrentTable} />
                             </div>
                         </div>
                         <div className="w-100">

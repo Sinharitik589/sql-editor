@@ -1,8 +1,10 @@
-.line-count-container{
-    width: 40px;
-}
+
 .main-text-container{
-    width: calc(100% - 40px);
+    width: 100%;
     outline: none;
     line-height: 20px;
+}
+textarea{
+    outline: none;
+    border: none;
 }

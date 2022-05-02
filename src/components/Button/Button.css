@@ -9,4 +9,12 @@
   background-color: #133c8b;
   color: #fff;
 }
+
+.example-btn {
+  background-color: white;
+  border: 1px solid grey;
+  color: #353535;
+  font-weight: 550;
+  width: 65px;
+}
 /*# sourceMappingURL=Button.css.map */

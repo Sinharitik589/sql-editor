@@ -19,7 +19,7 @@ export default function Info() {
     return (
         <div className="border-th-bottom border-th-width-lg top-info-container">
             Showing <span className="font-weight-bold ">{colNumber}</span> Columns
-            and <span className="font-weight-bold ">{rowsNumber}</span> For Table {tableName}
+            and <span className="font-weight-bold ">{rowsNumber}</span> Rows for Table {tableName}
         </div>
     )
 }
