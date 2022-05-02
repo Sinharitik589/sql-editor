@@ -7,7 +7,6 @@ export default function Main() {
     return (
         <div className="w-100">
             <Navbar/>
-            <Info/>
             <Field/>
         </div>
     )

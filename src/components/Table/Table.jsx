@@ -1,31 +1,40 @@
 import React, { useEffect, useState } from 'react'
-import Products from "../../utils/data/products.json"
+import SearchBox from '../SearchBox/SearchBox';
+import Row from "./Row";
+import SelectionBox from './SelectionBox';
+import "./Table.css"
+export default function Table({data=[]}) {
 
-export default function Table() {
-
-    const [cols, setCols] = useState([]);
-    const [data,setData] = useState([]);
     const [keys,setKeys]= useState([]);
+    const [currentData,setCurrentData] = useState([]);
+
     useEffect(() => {
-        let col_heading = Products.schema;
-        setKeys(Object.keys(Products.data[0]));
-        setData(Products.data);
-        setCols(col_heading);
-    },[])
+        setCurrentData(data);
+        if(data.length>0) setKeys(Object.keys(data[0]));
+    },[data])
 
     return (
-        <div className="w-100 h-100 overflow-auto p-1" >
-           <table className="h-100 ">
-                <tr>
-                    {cols.map(val=><th>{val}</th>)}
-                </tr>
+        <div className="w-100 h-100 overflow-auto  p-1" >
+           <table className="mx-auto">
+                <thead>
+                    <tr>
+                        <th>
+                            <SelectionBox/>
+                        </th>
+                        {keys.map((val,i)=><th key={`th_${i}`}>{val}</th>)}
+                    </tr>
+                    <tr>
+                        <th></th>
+                        {keys.map((val,i)=><th key={`search_${i}`}>
+                            <SearchBox  style={{height:20}}/>
+                        </th>)}
+                    </tr>
+                </thead>
+                <tbody>
                 {
-                    data.map(val=><tr>
-                       {
-                           keys.map(k=><td>{val[k]}</td>)
-                       }
-                        </tr>)
+                    currentData.map((val,i)=><Row val={val} index={i} keys={keys} />)
                 }
+                </tbody>
            </table>
         </div>
     )

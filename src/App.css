@@ -14,6 +14,10 @@ body {
   background-color: #F1F5FD;
 }
 
+.bg-th-darkblue {
+  background-color: #133c8b;
+}
+
 .border-th-left {
   border-left: 1px solid #DBDEE6;
 }
@@ -69,5 +73,9 @@ td, th {
 
 th {
   background-color: #F0F2F7;
+}
+
+.width-fit-content {
+  width: fit-content;
 }
 /*# sourceMappingURL=App.css.map */

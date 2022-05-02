@@ -1,4 +1,9 @@
 .top-info-container {
   height: 30px;
 }
+
+.top-info-container span {
+  width: fit-content;
+  font-weight: 550;
+}
 /*# sourceMappingURL=Info.css.map */

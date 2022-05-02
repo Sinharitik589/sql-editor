@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,QAAQ,CAAA;EACJ,MAAM,EAAE,IAAI;CACf;;AACD,AAAA,UAAU,CAAA;EACN,MAAM,EAAE,IAAI;CACf",
     "sources": [
         "Sidebar.scss"
     ],

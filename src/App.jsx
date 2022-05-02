@@ -1,20 +1,16 @@
-import { Row , Col } from "react-bootstrap"
-import Sidebar from "./components/sidebar/Sidebar"
+import React from "react";
 import Main from "./pages/Main"
 import "./App.css"
+import Customers from "./utils/data/customers.json"
+import { TableProvider } from "./context/TableContext";
 
 function App() {
   return (
-    <div className="vh-100 vw-100">
-      <Row className="w-100 h-100 gx-0">
-        <Col md={2}>
-          <Sidebar/>
-        </Col>
-        <Col md={10}>
-          <Main/>
-        </Col>
-      </Row> 
-    </div>
+   <TableProvider initial={Customers} initialTitle="Customers">
+      <div className="vh-100 vw-100">
+        <Main/>
+      </div>
+   </TableProvider>
   );
 }
 
