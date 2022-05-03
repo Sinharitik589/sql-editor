@@ -1,0 +1,22 @@
+.saved-bar{
+    border: 1.5px solid #DBDEE6;
+    h6{
+        color:#133c8b;
+        margin: 0;
+    }
+    hr{
+        margin: 2px 0;
+    }
+    p{
+        font-size: .8rem;
+        margin-bottom: 1px;
+        line-height: .85rem;
+    }
+    label{
+        border-radius: 20px;
+        border: 1.5px solid #353535;
+        font-size: .7rem;
+        width: fit-content;
+        padding: .1rem .37rem;
+    }
+}

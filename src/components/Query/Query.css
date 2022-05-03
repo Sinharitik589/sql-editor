@@ -13,4 +13,10 @@
 .query-tool-container {
   height: 35px;
 }
+
+.saving-query-name {
+  width: fit-content;
+  border: 1.5px solid #DBDEE6;
+  outline: none;
+}
 /*# sourceMappingURL=Query.css.map */

@@ -1,1 +1,27 @@
-/* No CSS *//*# sourceMappingURL=Recent.css.map */
+.recent-bar {
+  height: 60px;
+  border-bottom: 1px solid  #133c8b;
+}
+
+.query-title {
+  font-size: .8rem;
+  line-height: .8rem;
+  font-weight: 550;
+  color: #133c8b;
+  overflow-y: hidden;
+  height: 1.6rem;
+}
+
+.query-msg {
+  font-size: .7rem;
+  font-weight: 500;
+}
+
+.query-success {
+  color: #51C04F;
+}
+
+.query-fail {
+  color: #F30F0F;
+}
+/*# sourceMappingURL=Recent.css.map */

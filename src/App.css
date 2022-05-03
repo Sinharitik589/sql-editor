@@ -78,4 +78,13 @@ th {
 .width-fit-content {
   width: fit-content;
 }
+
+.form-control:focus {
+  box-shadow: none;
+  border: 1px solid #ced4da;
+}
+
+textarea {
+  background-color: white;
+}
 /*# sourceMappingURL=App.css.map */

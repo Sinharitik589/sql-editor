@@ -9,7 +9,7 @@ return (
                 Result
             </div>
             <div style={{height:"calc(100% - 30px)"}}>
-                <Table data={table}/>
+                {Object.keys(table).length>0&&<Table data={table}/>}
             </div>
         </div>
     )
