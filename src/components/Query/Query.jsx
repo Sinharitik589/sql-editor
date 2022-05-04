@@ -68,7 +68,7 @@ export default function Query({setCurrentTable , addToRecent , addToSaved , setM
                     <InputBox value={currentQuery?.query}/>
                 </div>
                 <Row className="gx-0 p-1 w-100 query-tool-container justify-content-between align-items-center">
-                    <Button onClick={handleRunButton} style={{height:30,width:80}}  className="bg-success">Run Query</Button>
+                    <Button onClick={handleRunButton}   className="bg-success btn-lg">Run Query</Button>
                     <div className="width-fit-content p-0 m-0">
                         {
                             orderQueries.map(val=><Button onClick={() =>handleQueryClick(val)}  className="example-btn">{val.name}</Button>)

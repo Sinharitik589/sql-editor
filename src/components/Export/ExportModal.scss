@@ -1,0 +1,19 @@
+.export-type-btn{
+    height: 1.6rem;
+    width: fit-content;
+    padding: .2rem;
+    font-size: 1rem;
+    min-width: 40px;
+    border: 1.5px solid #133c8b;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+.export-selected{
+    background-color: #133c8b;
+    color: white;
+}
+.disabled{
+    opacity: 0.5;
+}

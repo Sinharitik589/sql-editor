@@ -51,7 +51,7 @@ export default function Field() {
                     </Split>
                 </div>
                 <div className="h-100">
-                    <Saved saved={saved}/>
+                    <Saved setSaved={setSaved} saved={saved}/>
                 </div>
             </Split>
         </div>

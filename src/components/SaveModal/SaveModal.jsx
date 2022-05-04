@@ -15,7 +15,10 @@ export default function SaveModal({show,handleClose,handleSave}) {
 
     const handleDescription = (e) => setDescription(e.target.value);
 
-    const handleTitle = (e) => setTitle(e.target.value);
+    const handleTitle = (e) => {
+        setTitleError(false);
+        setTitle(e.target.value);
+    }
 
     const handleLabel = (e) =>  setLabel(e.target.value);
 
@@ -50,7 +53,7 @@ export default function SaveModal({show,handleClose,handleSave}) {
                         id="save-name"
                         />
                        {
-                           titleError&&<Form.Text>Enter title for the file</Form.Text>
+                           titleError&&<Form.Text className="text-danger">Enter title for the file</Form.Text>
                        }
                     </Form.Group>
                 </Col>
