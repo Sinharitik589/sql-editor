@@ -1,4 +1,4 @@
-import React, { createRef, useRef, useState } from 'react'
+import React, { createRef, useEffect, useRef, useState } from 'react'
 import { Row , Col } from 'react-bootstrap'
 import "./InputBox.css";
 
@@ -12,6 +12,10 @@ export default function InputBox({value}) {
         changeText(e.target.value);
     }
 
+    useEffect(() =>{
+        changeText(value);
+    },[value])
+
     return (
         <div className="h-100 w-100 border-th-bottom">
             <Row className="gx-0 h-100">
@@ -21,8 +25,7 @@ export default function InputBox({value}) {
                 <textarea
                 disabled
                 className="main-text-container p-1 h-100"
-                value={value}
-                ref={editorRef} 
+                value={text?text:""}
                 onChange={handleTextInput}
                 />
             </Row>

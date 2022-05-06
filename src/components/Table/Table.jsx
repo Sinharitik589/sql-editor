@@ -57,6 +57,7 @@ export default function Table({data=[],exportModal,setExportModal}) {
     useEffect(() => {
         setCurrentData(data);
         if(data.length>0) setKeys(Object.keys(data[0]));
+        else setKeys([]);
     },[data])
 
     return (
@@ -65,13 +66,15 @@ export default function Table({data=[],exportModal,setExportModal}) {
                 <table className="mx-auto">
                     <thead>
                         <tr>
+                            {
+                            keys.length>0&&
                             <th>
                                 <SelectionBox index="all" selected={selectionObj["all"]} selected={selectionObj["all"]}  onSelect={onSelect}/>
-                            </th>
+                            </th>}
                             {keys.map((val,i)=><th key={`th_${i}`}>{val}</th>)}
                         </tr>
                         <tr>
-                            <th></th>
+                            {keys.length>0&&<th></th>}
                             {keys.map((val,i)=><th key={`search_${i}`}>
                                 <SearchBox searchKey={val} onSearch={onSearch}  style={{height:20}}/>
                             </th>)}
@@ -79,7 +82,7 @@ export default function Table({data=[],exportModal,setExportModal}) {
                     </thead>
                     <tbody>
                     {
-                        currentData.map((val,i)=><Row  val={val} index={i} selected={selectionObj[i]} keys={keys} onSelect={onSelect} />)
+                        currentData.map((val,i)=><Row key={`table_row_${i}`}  val={val} index={i} selected={selectionObj[i]} keys={keys} onSelect={onSelect} />)
                     }
                     </tbody>
                 </table>

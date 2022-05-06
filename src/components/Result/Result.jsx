@@ -16,12 +16,12 @@ export default function Result({table,message}) {
                 </div>
                 <div className="col-md-3">
                     <Row className="gx-0 justify-content-end">
-                        <Button onClick={() =>setExportModal(true)}>Export</Button>
+                       {Object.keys(table).length>0&&<Button onClick={() =>setExportModal(true)}>Export</Button>}
                     </Row>
                 </div>
             </div>
             <div style={{height:"calc(100% - 30px)"}}>
-                {Object.keys(table).length>0&&<Table exportModal={exportModal} setExportModal={setExportModal} data={table}/>}
+                <Table exportModal={exportModal} setExportModal={setExportModal} data={table}/>
             </div>
         </div>
     )

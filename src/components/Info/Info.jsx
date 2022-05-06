@@ -1,5 +1,6 @@
 import React , { useState , useEffect } from 'react'
 import { useTable } from '../../context/TableContext'
+import TextIcon from '../Texticon/TextIcon';
 import "./Info.css"
 
 export default function Info() {
@@ -17,10 +18,14 @@ export default function Info() {
     },[table]);
 
     return (
-        <div className="border-th-bottom border-th-width-lg top-info-container">
+        <div className="border-th-bottom border-th-width-lg row gx-0 justify-content-end">
           {
-              tableName?<>  Showing <span className="font-weight-bold ">{colNumber}</span> Columns
-              and <span className="font-weight-bold ">{rowsNumber}</span> Rows for Table {tableName}</>:""
+              tableName?
+              <>
+              <TextIcon iconStyle={{color:"#133c8b"}} textStyle={{color:"#133c8b",fontWeight:500}} text={tableName} icon="fa fa-table"/>
+              <TextIcon iconStyle={{color:"#133c8b"}} textStyle={{color:"#133c8b",fontWeight:500}} text={rowsNumber} icon="fas fa-bars"/>
+              <TextIcon iconStyle={{color:"#133c8b"}} textStyle={{color:"#133c8b",fontWeight:500}} text={colNumber} icon="fa-solid fa-table-columns"/>
+              </>:""
           }
         </div>
     )

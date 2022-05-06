@@ -1,0 +1,14 @@
+.text-icon-container {
+  margin-right: 5px;
+  width: fit-content;
+}
+
+.text-icon {
+  color: #595959;
+  padding-right: 4px;
+}
+
+.text-icon-text {
+  color: #323232;
+}
+/*# sourceMappingURL=TextIcon.css.map */

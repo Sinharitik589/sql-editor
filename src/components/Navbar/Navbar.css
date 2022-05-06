@@ -4,5 +4,7 @@ nav {
 
 .proj-title {
   width: calc(15% + 2.5px);
+  color: white;
+  font-size: 1.6rem;
 }
 /*# sourceMappingURL=Navbar.css.map */

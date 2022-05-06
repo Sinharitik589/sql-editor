@@ -11,8 +11,8 @@ export default function Navbar() {
 
     return (
         <nav className="bg-th-blue">
-            <div className="proj-title bg-th-darkblue h-100">
-
+            <div className="proj-title bg-th-darkblue h-100 p-1">
+                SQL Editor
             </div>
         </nav>
     )

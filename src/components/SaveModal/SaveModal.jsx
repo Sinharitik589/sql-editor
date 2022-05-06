@@ -5,13 +5,13 @@ import Button from '../Button/Button'
 import OverLay from '../Overlay/OverLay'
 import "./SaveModal.css"
 
-export default function SaveModal({show,handleClose,handleSave}) {
+export default function SaveModal({show,handleClose,handleSave,editMode=false}) {
 
     const {currentQuery} = useTable();
-    const [title,setTitle] = useState("");
-    const [label,setLabel] = useState("");
-    const [description,setDescription] = useState("");
-    const [titleError,setTitleError] = useState(false);
+    const [title,setTitle] = useState(editMode?currentQuery.title:"");
+    const [label,setLabel] = useState(editMode?currentQuery.label:"");
+    const [description,setDescription] = useState(editMode?currentQuery.description:"");
+    const [titleError,setTitleError] = useState("");
 
     const handleDescription = (e) => setDescription(e.target.value);
 
@@ -23,11 +23,13 @@ export default function SaveModal({show,handleClose,handleSave}) {
     const handleLabel = (e) =>  setLabel(e.target.value);
 
     const save = () =>{
-        if(title){
+        try{
             handleSave(title,description,label);
             handleClose()
         }
-        else setTitleError(true);
+        catch(e){
+            setTitleError(e);
+        }
     }
 
     return (
@@ -53,7 +55,7 @@ export default function SaveModal({show,handleClose,handleSave}) {
                         id="save-name"
                         />
                        {
-                           titleError&&<Form.Text className="text-danger">Enter title for the file</Form.Text>
+                           titleError&&<Form.Text className="text-danger">{titleError}</Form.Text>
                        }
                     </Form.Group>
                 </Col>

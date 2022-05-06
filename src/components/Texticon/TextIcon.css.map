@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,oBAAoB,CAAA;EAChB,YAAY,EAAE,GAAG;EACjB,KAAK,EAAE,WAAW;CACrB;;AACD,AAAA,UAAU,CAAA;EACN,KAAK,EAAE,OAAO;EACd,aAAa,EAAE,GAAG;CACrB;;AACD,AAAA,eAAe,CAAA;EACX,KAAK,EAAE,OAAO;CACjB",
+    "sources": [
+        "TextIcon.scss"
+    ],
+    "names": [],
+    "file": "TextIcon.css"
+}

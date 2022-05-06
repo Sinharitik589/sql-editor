@@ -7,7 +7,7 @@ import { TableProvider } from "./context/TableContext";
 
 function App() {
   return (
-   <TableProvider initial={Orders} initialTitle="">
+   <TableProvider initial={Orders} initialTitle="orders">
       <div className="vh-100 vw-100">
         <Main/>
       </div>
