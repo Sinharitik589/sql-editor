@@ -8,12 +8,29 @@ import Info from '../Info/Info';
 import Recent from '../Recents/Recent';
 import Saved from '../Saved/Saved';
 
-export default function Field() {
+export default function Field({handleTabRecent,handleTabSaved,tableRecents,tableSaved}) {
     const [currentTable,setCurrentTable] = useState([]);
     const [recents,setRecents] = useState([]);
     const [saved,setSaved] = useState([]);
     const [message,setMessage] = useState(null);
-    const {setCurrentQuery} = useTable();
+    const {setCurrentQuery,tableName} = useTable();
+
+    useEffect(() =>{
+        let recent_array = tableRecents[tableName]?tableRecents[tableName]:[];
+        let saved_array = tableSaved[tableName]?tableSaved[tableName]:[]
+        setRecents(recent_array);
+        setSaved(saved_array);
+        setMessage(null);
+        setCurrentTable([]);
+    },[tableName])
+
+    useEffect(() =>{
+        handleTabRecent(recents);
+    },[recents])
+
+    useEffect(() =>{
+        handleTabSaved(saved);
+    },[saved])
 
     const addToRecent = (query,message) =>{
         let recentArray = recents;
@@ -21,6 +38,8 @@ export default function Field() {
         recentArray.push(query);
         setRecents(recentArray);
     }
+
+
 
     const removeFromRecent = (index) =>{
         let array = recents.slice(0);

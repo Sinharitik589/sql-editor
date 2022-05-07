@@ -1,7 +1,7 @@
 import React, { useEffect , useState } from 'react'
 import { Row ,Col } from 'react-bootstrap'
 import { useTable } from '../../context/TableContext'
-import { orderQueries } from '../../utils/Query_Helper/queryhelper'
+import { orderQueries , customerQueries} from '../../utils/Query_Helper/queryhelper'
 import Button from '../Button/Button'
 import InfoModal from '../InfoModal/InfoModal'
 import InputBox from "../InputBox/InputBox"
@@ -13,10 +13,16 @@ import "./Query.css"
 export default function Query({setCurrentTable , addToRecent , addToSaved , setMessage , saved , editSaved}) {
 
     const [columns,setColumns] = useState([]);
-    const {table,setTable,currentQuery,setCurrentQuery} = useTable();
+    const {table,tableName,setTable,currentQuery,setCurrentQuery} = useTable();
     const [saveModal,setSaveModal] = useState(false);
     const [infoModal , setInfoModal] = useState(false);
     const [editMode,setEditMode] = useState(false);
+    const [currentQueries,setCurrentQueries] = useState([]);
+
+    useEffect(() =>{
+        if(tableName==="orders") setCurrentQueries(orderQueries);
+        else setCurrentQueries(customerQueries);
+    },[tableName]);
 
     const callBack = (tempTable,update=false) =>{
         if(update) {
@@ -131,7 +137,7 @@ export default function Query({setCurrentTable , addToRecent , addToSaved , setM
                     <Button onClick={handleRunButton}   className="bg-success btn-lg">Run Query</Button>
                     <div className="width-fit-content p-0 m-0">
                         {
-                            orderQueries.map((val,index)=><Button key={`btn_${index}`} onClick={() =>handleQueryClick(val)}  className="example-btn">{val.name}</Button>)
+                           currentQueries.map((val,index)=><Button key={`${tableName}_btn_${index}`} onClick={() =>handleQueryClick(val)}  className="example-btn">{val.name}</Button>)
                         }
                     </div>
                 </Row>

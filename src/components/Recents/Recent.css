@@ -1,5 +1,5 @@
 .recent-bar {
-  height: 65px;
+  height: 68px;
   border: 1px solid  #133c8b;
 }
 
@@ -12,12 +12,13 @@
   line-height: .8rem;
   font-weight: 550;
   color: #133c8b;
-  overflow-y: hidden;
+  overflow: hidden;
   height: 1.6rem;
 }
 
 .query-msg {
   font-size: .7rem;
+  line-height: .7rem;
   font-weight: 500;
 }
 

@@ -7,4 +7,23 @@ nav {
   color: white;
   font-size: 1.6rem;
 }
+
+.nav-tables {
+  width: calc(100% - (15% + 2.5px));
+}
+
+.nav-table-name {
+  height: 75%;
+  min-width: 150px;
+  font-size: 1.2rem;
+  width: fit-content;
+  color: #353535;
+  border-radius: 10px 10px 0 0;
+  font-weight: 500;
+}
+
+.nav-selected {
+  background-color: white;
+  color: #133c8b;
+}
 /*# sourceMappingURL=Navbar.css.map */
