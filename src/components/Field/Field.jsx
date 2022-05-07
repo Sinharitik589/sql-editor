@@ -8,7 +8,7 @@ import Info from '../Info/Info';
 import Recent from '../Recents/Recent';
 import Saved from '../Saved/Saved';
 
-export default function Field({handleTabRecent,handleTabSaved,tableRecents,tableSaved}) {
+ function Field({handleTabRecent,handleTabSaved,tableRecents,tableSaved}) {
     const [currentTable,setCurrentTable] = useState([]);
     const [recents,setRecents] = useState([]);
     const [saved,setSaved] = useState([]);
@@ -91,3 +91,5 @@ export default function Field({handleTabRecent,handleTabSaved,tableRecents,table
         </div>
     )
 }
+
+export default Field;

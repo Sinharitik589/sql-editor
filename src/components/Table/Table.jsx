@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import ExportModal from '../Export/ExportModal';
+import React, { lazy, Suspense, useEffect, useState } from 'react'
 import SearchBox from '../SearchBox/SearchBox';
 import Row from "./Row";
 import SelectionBox from './SelectionBox';
 import "./Table.css"
+
+const ExportModal = lazy(() =>import("../Export/ExportModal"));
 export default function Table({data=[],exportModal,setExportModal}) {
 
     const [keys,setKeys]= useState([]);
@@ -87,7 +88,7 @@ export default function Table({data=[],exportModal,setExportModal}) {
                     </tbody>
                 </table>
             </div>
-            {exportModal &&<ExportModal show={exportModal} queriedTable={data} filteredTable={currentData} selectionObj={selectionObj} handleClose={() =>setExportModal(false)}/>}
+            {exportModal &&<Suspense fallback={() =><h1>Loading</h1>}><ExportModal show={exportModal} queriedTable={data} filteredTable={currentData} selectionObj={selectionObj} handleClose={() =>setExportModal(false)}/></Suspense>}
         </>
     )
 }

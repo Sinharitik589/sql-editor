@@ -1,7 +1,9 @@
 import React from "react";
 import Main from "./pages/Main"
 import "./App.css"
-import Customers from "./utils/data/customers.json"
+import "./css/fontawesome/all.min.css"
+import "./css/fontawesome/solid.min.css"
+import "./css/fontawesome/regular.min.css"
 import Orders from "./utils/data/orders.json"
 import { TableProvider } from "./context/TableContext";
 

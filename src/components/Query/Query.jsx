@@ -1,14 +1,15 @@
-import React, { useEffect , useState } from 'react'
+import React, { lazy, Suspense, useEffect , useState } from 'react'
 import { Row ,Col } from 'react-bootstrap'
 import { useTable } from '../../context/TableContext'
 import { orderQueries , customerQueries} from '../../utils/Query_Helper/queryhelper'
 import Button from '../Button/Button'
-import InfoModal from '../InfoModal/InfoModal'
 import InputBox from "../InputBox/InputBox"
-import SaveModal from '../SaveModal/SaveModal'
 import SectionTitle from '../SectionTitle/SectionTitle'
 import TextIcon from '../Texticon/TextIcon'
 import "./Query.css"
+
+const SaveModal = lazy(() =>import("../SaveModal/SaveModal"));
+const InfoModal = lazy(() =>import("../InfoModal/InfoModal"));
 
 export default function Query({setCurrentTable , addToRecent , addToSaved , setMessage , saved , editSaved}) {
 
@@ -152,8 +153,8 @@ export default function Query({setCurrentTable , addToRecent , addToSaved , setM
                     </div>
                 </div>
             </Col>
-            {saveModal&&<SaveModal editMode={editMode} show={true} handleSave={handleQuerySave} handleClose={handleSaveModalClose} />}
-            {infoModal&&<InfoModal show={true} text={currentQuery?.description?currentQuery.description:""} onClose={() => setInfoModal(false)} />}
+            {saveModal&&<Suspense fallback={() =><h1>Loading</h1>}><SaveModal editMode={editMode} show={true} handleSave={handleQuerySave} handleClose={handleSaveModalClose} /></Suspense>}
+            {infoModal&&<Suspense fallback={() =><h1>Loading</h1>}><InfoModal show={true} text={currentQuery?.description?currentQuery.description:""} onClose={() => setInfoModal(false)} /></Suspense>}
         </Row>
     )
 }
