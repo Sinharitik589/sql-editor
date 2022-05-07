@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# SQL Editor View
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A sql editor view made with ReactJS using [Create React App](https://github.com/facebook/create-react-app) for easily quering SQL and utilising the result.
+## Demo
+Please do visit [this link](https://sqleditorp.netlify.app/) for demo.
+| NOTE: For the demo purpose queries cant be written to the text area , it can only be selected from the set of queries |
+| --- |
+## How to run locally
+Clone the project and then run `npm install` which will install all the required dependencies and then `npm start` to start the project.
+## Page Speed
+The lighthouse in google chrome dev tools was used to calculate the page speed  and can also be checked by using [this online tool](https://pagespeed.web.dev/report?url=https%3A%2F%2Fsqleditorp.netlify.app%2F) . Page load time came out to be **2.2 sec**
+## Page Load Optimization
+Optimization of page load time is very important for a good user experience and for this two major issue was faced .
+### JS Bundle Size
+This being a SPA , the whole bundle of javascript was shipped to the user during initial rendering which was causing increase in page load time.
+The main task was to eliminate the javascript from the main bundle that was not needed by the user at the time of initial render .This can be achieved by dynamic importing the javascript at the time of need .This project uses [File Saver](https://www.npmjs.com/package/file-saver) and [XLSX](https://www.npmjs.com/package/xlsx)
+for exporting data to a csv or json file , the functionality was needed when the user wanted to export the data so using the concept of [**lazy**](https://www.npmjs.com/package/xlsx) the javascript bundle size was reduced from 800 KB to 500 KB
+### Unused CSS
+Unused css is a pain for all the projects and so was for this , this project uses [FontAwesome](https://fontawesome.com/) for showing icons which was first loaded via CDN giving very less control on which parts to use , then firstly i used it locally which build a css file of 84 kb which was then reduced to 11kb using [purgecss](https://purgecss.com/)
+### Page Load Time Before Optimisation
 
-## Available Scripts
+![preoptimised](https://user-images.githubusercontent.com/67551927/167253827-0bc92ad0-f24d-4b03-b016-494c4c35cdc3.jpg)
 
-In the project directory, you can run:
+### Page Load Time After Optimisation
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![postoptimisation](https://user-images.githubusercontent.com/67551927/167253821-1d6341a3-e1d3-4cc7-9460-7a875f41f30e.jpg)
