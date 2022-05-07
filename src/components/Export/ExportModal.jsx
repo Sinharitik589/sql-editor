@@ -9,7 +9,7 @@ import "./ExportModal.css";
 export default function ExportModal({show,queriedTable,filteredTable,selectionObj,handleClose}) {
 
     const dataTypes = ["Queried","Filtered","Selected"];
-    const fileTypes = ["CSV","JSON"];
+    const fileTypes = ["EXCEL","JSON"];
     const [fileName,setFileName] = useState("");
     const [fileNameError,setFileNameError] = useState(false);
     const [dataType,setDataType] = useState(0);

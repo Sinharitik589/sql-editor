@@ -88,7 +88,7 @@ export default function Table({data=[],exportModal,setExportModal}) {
                     </tbody>
                 </table>
             </div>
-            {exportModal &&<Suspense fallback={() =><h1>Loading</h1>}><ExportModal show={exportModal} queriedTable={data} filteredTable={currentData} selectionObj={selectionObj} handleClose={() =>setExportModal(false)}/></Suspense>}
+            {exportModal &&<Suspense fallback={() =><h1>Hello</h1>}><ExportModal show={exportModal} queriedTable={data} filteredTable={currentData} selectionObj={selectionObj} handleClose={() =>setExportModal(false)}/></Suspense>}
         </>
     )
 }
